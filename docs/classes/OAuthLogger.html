@@ -153,8 +153,8 @@ through dependency injection.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">projects/lib/src/types.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">projects/lib/src/types.ts:72</a></div>
                 </td>
             </tr>
 
@@ -237,8 +237,8 @@ through dependency injection.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">projects/lib/src/types.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">projects/lib/src/types.ts:76</a></div>
                 </td>
             </tr>
 
@@ -321,8 +321,8 @@ through dependency injection.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">projects/lib/src/types.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">projects/lib/src/types.ts:73</a></div>
                 </td>
             </tr>
 
@@ -405,8 +405,8 @@ through dependency injection.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">projects/lib/src/types.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">projects/lib/src/types.ts:74</a></div>
                 </td>
             </tr>
 
@@ -489,8 +489,8 @@ through dependency injection.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">projects/lib/src/types.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">projects/lib/src/types.ts:75</a></div>
                 </td>
             </tr>
 
@@ -567,7 +567,6 @@ through dependency injection.</p>
    * Deprecated:  Use property &#x60;&#x60;events&#x60;&#x60; on OAuthService instead.
    */
   onTokenReceived?: (receivedTokens: ReceivedTokens) &#x3D;&gt; void;
-
   /**
    * Hook, to validate the received tokens.
    *
@@ -586,7 +585,12 @@ through dependency injection.</p>
   /**
    * A custom hash fragment to be used instead of the
    * actual one. This is used for silent refreshes, to
-   * pass the iframes hash fragment to this method.
+   * pass the iframes hash fragment to this method, and
+   * is also used by popup flows in the same manner.
+   * This can be used with code flow, where is must be set
+   * to a hash symbol followed by the querystring. The
+   * question mark is optional, but may be present following
+   * the hash symbol.
    */
   customHashFragment?: string;
 
@@ -603,9 +607,17 @@ through dependency injection.</p>
   /**
    * Normally, you want to clear your hash fragment after
    * the lib read the token(s) so that they are not displayed
-   * anymore in the url. If not, set this to true.
+   * anymore in the url. If not, set this to true. For code flow
+   * this controls removing query string values.
    */
   preventClearHashAfterLogin? &#x3D; false;
+
+  /**
+   * Set this for code flow if you used a custom redirect Uri
+   * when retrieving the code. This is used internally for silent
+   * refresh and popup flows.
+   */
+  customRedirectUri?: string;
 }
 
 /**
@@ -663,7 +675,7 @@ export interface ParsedIdToken {
  */
 export interface TokenResponse {
   access_token: string;
-  id_token: string; 
+  id_token: string;
   token_type: string;
   expires_in: number;
   refresh_token: string;

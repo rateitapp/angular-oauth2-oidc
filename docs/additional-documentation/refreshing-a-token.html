@@ -89,7 +89,7 @@ export const authConfig: AuthConfig = {
 <div><pre class="line-numbers"><code class="language-HTML">&lt;html&gt;
 &lt;body&gt;
     &lt;script&gt;
-    parent.postMessage(location.hash, location.origin);
+    window.parent.postMessage(location.hash || (&#39;#&#39; + location.search), location.origin);
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div><p>Please make sure that this file is copied to your output directory by your build task. When using the CLI you can define it as an asset for this. For this, you have to add the following line to the file <code>.angular-cli.json</code>:</p>

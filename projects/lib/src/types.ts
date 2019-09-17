@@ -1,7 +1,14 @@
 /**
  * Additional options that can be passed to tryLogin.
  */
-
+export class LoginOptions {
+  /**
+   * Is called, after a token has been received and
+   * successfully validated.
+   *
+   * Deprecated:  Use property ``events`` on OAuthService instead.
+   */
+  onTokenReceived?: (receivedTokens: ReceivedTokens) => void;
   /**
    * Hook, to validate the received tokens.
    *
@@ -110,7 +117,7 @@ export interface ParsedIdToken {
  */
 export interface TokenResponse {
   access_token: string;
-  id_token: string; 
+  id_token: string;
   token_type: string;
   expires_in: number;
   refresh_token: string;

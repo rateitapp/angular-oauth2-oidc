@@ -252,12 +252,22 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Optional</span>
+                                <a href="#skipAuthorizationCodeExchange">skipAuthorizationCodeExchange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
                                 <a href="#skipIssuerCheck">skipIssuerCheck</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Optional</span>
                                 <a href="#skipSubjectCheck">skipSubjectCheck</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#storeAuthorizationCode">storeAuthorizationCode</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -313,7 +323,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">projects/lib/src/auth.config.ts:229</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">projects/lib/src/auth.config.ts:233</a></div>
                             </td>
                         </tr>
 
@@ -918,7 +928,7 @@ implicit flow.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="242" class="link-to-prism">projects/lib/src/auth.config.ts:242</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="246" class="link-to-prism">projects/lib/src/auth.config.ts:246</a></div>
                             </td>
                         </tr>
 
@@ -1643,6 +1653,34 @@ silent refresh for debugging.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="skipAuthorizationCodeExchange"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Optional</span>
+                            skipAuthorizationCodeExchange</b>
+                            <a href="#skipAuthorizationCodeExchange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">projects/lib/src/auth.config.ts:233</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="skipIssuerCheck"></a>
                         <span class="name">
                             <b>
@@ -1706,6 +1744,34 @@ Normally, it should be the same as before.</p>
 </div>
                     </td>
                 </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="storeAuthorizationCode"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Optional</span>
+                            storeAuthorizationCode</b>
+                            <a href="#storeAuthorizationCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">projects/lib/src/auth.config.ts:231</a></div>
+                            </td>
+                        </tr>
+
 
             </tbody>
         </table>
@@ -1944,62 +2010,62 @@ is triggered after 75% of the token&#39;s life time.</p>
   /**
    * The client&#x27;s id as registered with the auth server
    */
-  public clientId? &#x3D; &#x27;&#x27;;
+  public clientId?&#x3D; &#x27;&#x27;;
 
   /**
    * The client&#x27;s redirectUri as registered with the auth server
    */
-  public redirectUri? &#x3D; &#x27;&#x27;;
+  public redirectUri?&#x3D; &#x27;&#x27;;
 
   /**
    * An optional second redirectUri where the auth server
    * redirects the user to after logging out.
    */
-  public postLogoutRedirectUri? &#x3D; &#x27;&#x27;;
+  public postLogoutRedirectUri?&#x3D; &#x27;&#x27;;
 
   /**
    * The auth server&#x27;s endpoint that allows to log
    * the user in when using implicit flow.
    */
-  public loginUrl? &#x3D; &#x27;&#x27;;
+  public loginUrl?&#x3D; &#x27;&#x27;;
 
   /**
    * The requested scopes
    */
-  public scope? &#x3D; &#x27;openid profile&#x27;;
+  public scope?&#x3D; &#x27;openid profile&#x27;;
 
-  public resource? &#x3D; &#x27;&#x27;;
+  public resource?&#x3D; &#x27;&#x27;;
 
-  public rngUrl? &#x3D; &#x27;&#x27;;
+  public rngUrl?&#x3D; &#x27;&#x27;;
 
   /**
    * Defines whether to use OpenId Connect during
    * implicit flow.
    */
-  public oidc? &#x3D; true;
+  public oidc?&#x3D; true;
 
   /**
    * Defines whether to request an access token during
    * implicit flow.
    */
-  public requestAccessToken? &#x3D; true;
+  public requestAccessToken?&#x3D; true;
 
   public options?: any &#x3D; null;
 
   /**
    * The issuer&#x27;s uri.
    */
-  public issuer? &#x3D; &#x27;&#x27;;
+  public issuer?&#x3D; &#x27;&#x27;;
 
   /**
    * The logout url.
    */
-  public logoutUrl? &#x3D; &#x27;&#x27;;
+  public logoutUrl?&#x3D; &#x27;&#x27;;
 
   /**
    * Defines whether to clear the hash fragment after logging in.
    */
-  public clearHashAfterLogin? &#x3D; true;
+  public clearHashAfterLogin?&#x3D; true;
 
   /**
    * Url of the token endpoint as defined by OpenId Connect and OAuth 2.
@@ -2011,7 +2077,7 @@ is triggered after 75% of the token&#39;s life time.</p>
    */
   public userinfoEndpoint?: string &#x3D; null;
 
-  public responseType? &#x3D; &#x27;&#x27;;
+  public responseType?&#x3D; &#x27;&#x27;;
 
   /**
    * Defines whether additional debug information should
@@ -2019,20 +2085,20 @@ is triggered after 75% of the token&#39;s life time.</p>
    * the verbosity of the console needs to be explicitly set
    * to include Debug level messages.
    */
-   public showDebugInformation? &#x3D; false;
+  public showDebugInformation?&#x3D; false;
 
   /**
    * The redirect uri used when doing silent refresh.
    */
-  public silentRefreshRedirectUri? &#x3D; &#x27;&#x27;;
+  public silentRefreshRedirectUri?&#x3D; &#x27;&#x27;;
 
-  public silentRefreshMessagePrefix? &#x3D; &#x27;&#x27;;
+  public silentRefreshMessagePrefix?&#x3D; &#x27;&#x27;;
 
   /**
    * Set this to true to display the iframe used for
    * silent refresh for debugging.
    */
-  public silentRefreshShowIFrame? &#x3D; false;
+  public silentRefreshShowIFrame?&#x3D; false;
 
   /**
    * Timeout for silent refresh.
@@ -2068,7 +2134,7 @@ is triggered after 75% of the token&#39;s life time.</p>
    * Defines whether every url provided by the discovery
    * document has to start with the issuer&#x27;s url.
    */
-  public strictDiscoveryDocumentValidation? &#x3D; true;
+  public strictDiscoveryDocumentValidation?&#x3D; true;
 
   /**
    * JSON Web Key Set (https://tools.ietf.org/html/rfc7517)
@@ -2083,27 +2149,27 @@ is triggered after 75% of the token&#39;s life time.</p>
    */
   public customQueryParams?: object &#x3D; null;
 
-  public silentRefreshIFrameName? &#x3D; &#x27;angular-oauth-oidc-silent-refresh-iframe&#x27;;
+  public silentRefreshIFrameName?&#x3D; &#x27;angular-oauth-oidc-silent-refresh-iframe&#x27;;
 
   /**
    * Defines when the token_timeout event should be raised.
    * If you set this to the default value 0.75, the event
    * is triggered after 75% of the token&#x27;s life time.
    */
-  public timeoutFactor? &#x3D; 0.75;
+  public timeoutFactor?&#x3D; 0.75;
 
   /**
    * If true, the lib will try to check whether the user
    * is still logged in on a regular basis as described
    * in http://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification
    */
-  public sessionChecksEnabled? &#x3D; false;
+  public sessionChecksEnabled?&#x3D; false;
 
   /**
    * Interval in msec for checking the session
    * according to http://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification
    */
-  public sessionCheckIntervall? &#x3D; 3 * 1000;
+  public sessionCheckIntervall?&#x3D; 3 * 1000;
 
   /**
    * Url for the iframe used for session checks
@@ -2113,7 +2179,7 @@ is triggered after 75% of the token&#39;s life time.</p>
   /**
    * Name of the iframe to use for session checks
    */
-  public sessionCheckIFrameName? &#x3D; &#x27;angular-oauth-oidc-check-session-iframe&#x27;;
+  public sessionCheckIFrameName?&#x3D; &#x27;angular-oauth-oidc-check-session-iframe&#x27;;
 
   /**
    * This property has been introduced to disable at_hash checks
@@ -2122,21 +2188,21 @@ is triggered after 75% of the token&#39;s life time.</p>
    * Of course, when disabling these checks the we are bypassing
    * a security check which means we are more vulnerable.
    */
-  public disableAtHashCheck? &#x3D; false;
+  public disableAtHashCheck?&#x3D; false;
 
   /**
    * Defines wether to check the subject of a refreshed token after silent refresh.
    * Normally, it should be the same as before.
    */
-  public skipSubjectCheck? &#x3D; false;
+  public skipSubjectCheck?&#x3D; false;
 
-  public useIdTokenHintForSilentRefresh? &#x3D; false;
+  public useIdTokenHintForSilentRefresh?&#x3D; false;
 
   /**
    * Defined whether to skip the validation of the issuer in the discovery document.
    * Normally, the discovey document&#x27;s url starts with the url of the issuer.
    */
-  public skipIssuerCheck? &#x3D; false;
+  public skipIssuerCheck?&#x3D; false;
 
   /**
    * According to rfc6749 it is recommended (but not required) that the auth
@@ -2151,12 +2217,12 @@ is triggered after 75% of the token&#39;s life time.</p>
    * Default separator is &#x27;;&#x27; (encoded %3B).
    * In rare cases, this character might be forbidden or inconvenient to use by the issuer so it can be customized.
    */
-  public nonceStateSeparator? &#x3D; &#x27;;&#x27;;
+  public nonceStateSeparator?&#x3D; &#x27;;&#x27;;
 
   /**
    * Set this to true to use HTTP BASIC auth for password flow
    */
-  public useHttpBasicAuth? &#x3D; false;
+  public useHttpBasicAuth?&#x3D; false;
 
   /**
    * The window of time (in seconds) to allow the current time to deviate when validating id_token&#x27;s iat and exp values.
@@ -2168,7 +2234,11 @@ is triggered after 75% of the token&#39;s life time.</p>
    * You can disbale it here by setting this flag to true.
    * https://tools.ietf.org/html/rfc7636#section-1.1
    */
-  public disablePKCE? &#x3D; false;
+  public disablePKCE?&#x3D; false;
+
+  public storeAuthorizationCode?&#x3D; false;
+
+  public skipAuthorizationCodeExchange?&#x3D; false;
 
   constructor(json?: Partial&lt;AuthConfig&gt;) {
     if (json) {
