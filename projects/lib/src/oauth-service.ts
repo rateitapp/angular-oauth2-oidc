@@ -940,6 +940,9 @@ export class OAuthService extends AuthConfig implements OnDestroy {
                 };
 
                 const listener = (e: MessageEvent) => {
+                    // stop listening for the window closed event
+                    clearInterval(closeMonitor);
+
                     const message = this.processMessageEventMessage(e);
 
                     this.tryLogin({
@@ -956,6 +959,16 @@ export class OAuthService extends AuthConfig implements OnDestroy {
                 };
 
                 window.addEventListener('message', listener);
+
+                let closeMonitor = setInterval(() => {
+                    if (windowRef.closed) {
+                        // stop this monitor
+                        clearInterval(closeMonitor);
+                        // remove the listener
+                        window.removeEventListener('message', listener);
+                        reject('The window was closed outside of this codebase');
+                    }
+                }, 500);
             });
         });
     }
