@@ -966,7 +966,9 @@ export class OAuthService extends AuthConfig implements OnDestroy {
                         clearInterval(closeMonitor);
                         // remove the listener
                         window.removeEventListener('message', listener);
-                        reject('The window was closed outside of this codebase');
+                        const event = new OAuthErrorEvent('popup_closed', null);
+                        this.eventsSubject.next(event);
+                        reject(event);
                     }
                 }, 500);
             });

@@ -20,7 +20,8 @@ export type EventType =
   | 'session_changed'
   | 'session_error'
   | 'session_terminated'
-  | 'logout';
+  | 'logout'
+  | 'popup_closed';
 
 export abstract class OAuthEvent {
   constructor(readonly type: EventType) {}
